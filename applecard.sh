@@ -18,11 +18,17 @@
 # 14. Run script in terminal with ./applecard.sh
 # 15. Make sure your transactions were uploaded properly.
 
+printf "Start reading file\n\n"
+
 while read p; do
 	# Apple Card CSV's are formatted with comma delimitation.
   IFS=$',' read -ra COLS <<< "$p"
 
-  printf "Start reading file\n"
+  if [ "${COLS[2]}" == "Description" ]
+  then
+  	printf "First section is header: skipping\n"
+  	continue
+  fi
 
   # This application considers the "date" to be the Clearing data, AKA the second column.
   prettydate="${COLS[1]}20"
@@ -34,7 +40,7 @@ while read p; do
   # This application takes column 3 to be the merchant, as it's usually the more descriptive value.
   merchant="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "${COLS[3]}")"
 
-  printf "Query String = %q \n" 'merchant='$merchant'&date='$tdate'&amount='$amount
+  printf "\nQuery String = %q \n" 'merchant='$merchant'&date='$tdate'&amount='$amount
   printf "See cURL response below\n"
 
   <INSERT CURL COMMAND> && echo
