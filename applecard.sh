@@ -18,6 +18,9 @@
 # 14. Run script in terminal with ./applecard.sh
 # 15. Make sure your transactions were uploaded properly.
 
+printf "Adding End of Line to CSV file\n"
+echo >> transactions.csv
+
 printf "Start reading file\n\n"
 
 while read p; do
@@ -34,16 +37,22 @@ while read p; do
   prettydate="${COLS[1]}20"
   tdate="${prettydate//$'/'/%2F}"
 
+  if [ "$prettydate" == "20" ]
+  then
+  	printf "End of file reached: ending\n"
+  	continue
+  fi
+
   # Amount is found in column 6, Mint API does not take a $
   amount="${COLS[6]}"
 
   # This application takes column 3 to be the merchant, as it's usually the more descriptive value.
   merchant="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "${COLS[3]}")"
 
-  printf "\nQuery String = %q \n" 'merchant='$merchant'&date='$tdate'&amount='$amount
+  printf "Query String = %q \n" 'merchant='$merchant'&date='$tdate'&amount='$amount
   printf "See cURL response below\n"
 
-  <INSERT CURL COMMAND> && echo
+  <INSERT CURL COMMAND HERE> && echo
 done <transactions.csv
 
 printf "Complete reading file\n"
