@@ -2,9 +2,7 @@
 Use this tool to import your Apple Card transactions to [Mint Intuit.](https://www.mint.com/)
 
 ## Getting the Apple Card Transactions
-Using the Apple Wallet App, view your Card Balance and select the applicable Statement.
-
-Select the bottom option, **Export Transactions**, and select **Comma Separated Values (CSV).**
+Using the Apple Wallet App, [export](https://www.macworld.com/article/3515004/how-to-export-your-apple-card-monthly-transactions-in-csv-or-ofx-format.html) your statement using the CSV option.
 
 Save this somewhere on your iCloud Drive where you will be able to access this on your personal computer.
 
@@ -28,3 +26,6 @@ Open Terminal and run the following command:
 `./applecard.sh`
 
 Make sure that the transaction CSV file is in the same directory. At this point, check to make sure your transactions were uploaded properly.
+
+## Credit
+Credit to Charlie Gorichanaz for finding the cURL command to post transactions to Mint. Most of the code here is inspired and taken from this [blog post.](https://votecharlie.com/blog/2017/06/mint-batch-transaction-import-hack.html)
