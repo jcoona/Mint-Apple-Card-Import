@@ -22,7 +22,9 @@ In the curl command, modify the part of the line where the merchant, date, and a
 
 ## Running Script
 Open Terminal and run the following command:
+
 `chmod +x applecard.sh`
+
 `./applecard.sh`
 
 Make sure that the transaction CSV file is in the same directory. At this point, check to make sure your transactions were uploaded properly.
