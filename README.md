@@ -2,7 +2,9 @@
 Use this tool to import your Apple Card transactions to [Mint Intuit.](https://www.mint.com/)
 
 ## Getting the Apple Card Transactions
-Using the Apple Wallet App, view your Card Balance and select the applicable Statement. Select the bottom option, Export Transactions, and select Comma Separated Values (CSV). Save this somewhere on your iCloud Drive where you will be able to access this on your personal computer.
+Using the Apple Wallet App, view your Card Balance and select the applicable Statement. 
+Select the bottom option, **Export Transactions**, and select **Comma Separated Values (CSV).** 
+Save this somewhere on your iCloud Drive where you will be able to access this on your personal computer.
 
 ## Formatting the CSV File
 You will be uploading statements based on the fourth column merchant names, so take a chance to review and modify any names you want.
