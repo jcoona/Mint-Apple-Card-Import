@@ -60,7 +60,7 @@ while read p; do
   echo $amount
   printf "See cURL response below\n"
 
-  #<INSERT CURL COMMAND HERE> && echo
+  <INSERT CURL COMMAND HERE> && echo
 done <transactions.csv
 
 printf "Complete reading file\n"
