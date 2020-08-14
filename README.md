@@ -8,6 +8,11 @@ Save this somewhere on your iCloud Drive where you will be able to access this o
 
 ## Formatting the CSV File
 You will be uploading statements based on the fourth column merchant names, so take a chance to review and modify any names you want.
+
+If any merchants contain a comma in their name, please replace with an empty string.
+
+Format the date column so that it follows the format `MM/dd/yyyy`
+
 Rename the file to transactions.csv
 
 ## Editing the Script
