@@ -15,7 +15,9 @@ Each time you run this script you will have to modify it.
 
 Log into your Mint account, and use your inspect tool to monitor network traffic. Add a test transaction and look for the network call for `updateTransaction.xevent`. Copy the cURL command for this network call, and paste it into the `<INSERT CURL COMMAND HERE>` section in your script.
 
-In the curl command, modify the part of the line where the merchant, date, and amounts are set. Add the following parameters:
+In the curl command, modify the part of the line where the merchant, date, and amounts are set. 
+
+Add the following parameters:
 `merchant='$merchant'&date='$tdate'&amount='$amount'`
 
 ## Running Script
