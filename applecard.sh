@@ -34,7 +34,7 @@ while read p; do
   fi
 
   # This application considers the "date" to be the Clearing data, AKA the second column.
-  prettydate="${COLS[1]}20"
+  prettydate="${COLS[1]}"
   tdate="${prettydate//$'/'/%2F}"
 
   # If we got to the newline at the end, stop running the program.
